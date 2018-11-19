@@ -1,0 +1,23 @@
+<p class="text-center text-muted" *ngIf="!listPokemon.length">Pokemon não encontrado!</p>
+
+<ol class="list-unstyled p-5 m-3 border border-danger">
+    <li class="row" *ngFor="let cols of rows no-gutters">
+      <div *ngFor="let pokemon of cols" class="col-xs-4 col-sm-4 col-md-4 col-lg-2 row p-0 mx-auto">
+        <div class="card border-light text-center mb-2">
+          <h4 class="card-header" *ngIf="title">{{ title }}</h4>
+          <div class="card-block text-justify">
+            <app-pokemon [sprite]="pokemon.sprite" class="ml-3"></app-pokemon>
+            <div class="text-center">
+              <i aria-hidden="true" class="fa fa-heart -o fa 1x mr-2"></i>
+              <ngbd-modal-basic [id] = pokemon.id></ngbd-modal-basic>
+              <p class="text-uppercase text-center font-weight-bold font-italic col-12">{{pokemon.name}}  #{{pokemon.id}}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </li>
+  </ol>
+
+
+
+
